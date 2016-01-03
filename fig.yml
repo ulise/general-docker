@@ -1,0 +1,26 @@
+# Sample Block
+
+#nginx01:
+#  build: nginx
+#  links:
+#   - sling01
+#   - sling02
+#  ports:
+#   - "80:80"
+#sling01:
+#  image: apachesling/sling 
+#  command: /bin/bash -c "exec java -Xmx384M -agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n -jar org.apache.sling.launchpad.jar -Dsling.run.modes=oak,oak_mongo -Doak.mongo.uri=mongodb://mongodb:27017/oak"
+#  links:
+#   - mongodb01:mongodb
+#  ports:
+#   - "8080:8080"
+#mongodb01:
+#  image: mongo:latest
+#sling02:
+#  image: apachesling/sling 
+#  command: /bin/bash -c "exec java -Xmx384M -agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n -jar org.apache.sling.launchpad.jar -Dsling.run.modes=oak,oak_mongo -Doak.mongo.uri=mongodb://mongodb:27017/oak"
+#  links:
+#   - mongodb01:mongodb
+#  ports:
+#   - "8081:8080"
+
